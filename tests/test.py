@@ -8,4 +8,6 @@ driver.get("https://www.instagram.com/accounts/login/")
 login_page = LoginPage(driver)
 login_page.enter_username("pyautomation")
 login_page.enter_password("Ab123456!")
-login_page.click_login()
+login_page.login()
+
+driver.quit()

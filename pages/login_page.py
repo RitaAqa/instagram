@@ -10,5 +10,5 @@ class LoginPage():
         self.driver.find_element_by_name("password").clear()
         self.driver.find_element_by_name("password").send_keys(password)
 
-    def enter_login(self):
+    def login(self):
         self.driver.find_element_by_xpath("//button[@type='submit']").click()
