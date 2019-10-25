@@ -7,3 +7,4 @@ class MainPage():
 
     def click_result_with_text((self)
         self.driver.find_element_by_xpath()main_page."#fitness")
+
