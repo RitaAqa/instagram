@@ -1,14 +1,12 @@
-class SearchResultsPage():
-    def __init__(self, driver):
-        self.driver = driver
+from selenium.webdriver.common.by import By
+from pages.base_page import BasePage
 
-    def enter_username(self, username):
-        self.driver.find_element_by_name("username").clear()
-        self.driver.find_element_by_name("username").send_keys(username)
 
-    def enter_password(self, password):
-        self.driver.find_element_by_name("password").clear()
-        self.driver.find_element_by_name("password").send_keys(password)
+class SearchResultsPage(BasePage):
+    BUTTON_FOLLOW = (By.XPATH, "//button[@type='button']")
 
-    def click_login(self):
-        self.driver.find_element_by_xpath("//button[@type='submit']").click()
+    def _verify_page(self):
+        self.on_this_page(self.BUTTON_FOLLOW)
+
+    def get_follow_button_text(self):
+        return self.get_element(self.BUTTON_FOLLOW).text
